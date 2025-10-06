@@ -1,0 +1,13 @@
+I used GENERATED ALWAYS AS IDENTITY for auto-increment primary keys .
+
+
+DATE type for birth/hire/enrollment dates; VARCHAR for names and departments .
+
+
+CHECK (credits > 0) ensures courses have positive credit values .
+
+
+UNIQUE (student_id, course_id, semester, year) prevents double-enrolling the same student in the same course for the same term .
+
+
+ON DELETE CASCADE on FKs: if you delete a student or course, their enrollments will be removed — useful for test data; change to RESTRICT if you prefer not to cascade deletes .
